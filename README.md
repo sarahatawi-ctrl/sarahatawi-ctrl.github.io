@@ -1,11 +1,28 @@
 # sarahatawi-ctrl.github.io
 
-Personal website of Sarah Atawi — Computer Science Graduate.
+Official personal portfolio of **Sarah Atawi**, Computer Science Graduate.
+Live at **https://sarahatawi-ctrl.github.io**
 
-Plain HTML/CSS/JS, no build step. Hosted on GitHub Pages from the `main` branch.
+Bilingual (English / Arabic) React + Vite + Tailwind site, hosted on GitHub Pages.
 
-- `index.html` — page content (English source text)
-- `main.js` — Arabic translations and the EN/ع toggle
-- `styles.css` — design tokens, light/dark themes, layout
+## Edit content
+Almost all text lives in `src/lib/content.ts`, with English and Arabic side by side:
+projects and case studies, experience, education, leadership and the interface copy.
+Images and video are in `public/`.
 
-To preview locally: `python3 -m http.server 8080` and open http://localhost:8080.
+To link a project's repository, set `repositoryUrl` on that project
+(for example Captain Crew, which currently shows "Repository coming soon").
+
+## Run locally
+```bash
+npm ci
+npm run dev
+```
+
+## Deploy
+```bash
+npm run deploy
+```
+This builds the site and publishes `dist/` to the `gh-pages` branch, which GitHub Pages serves.
+`scripts/static-routes.mjs` writes a page for every `/work/<slug>` case study so direct links work.
+The `main` branch holds the source code.
