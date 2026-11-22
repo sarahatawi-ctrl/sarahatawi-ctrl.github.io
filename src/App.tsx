@@ -14,17 +14,17 @@ const socialLinks = [
 ];
 
 const contactLinks = [
-  { label: 'LinkedIn', value: 'Sarah Atawi', href: 'https://www.linkedin.com/in/sarah-atawi-332922291/', icon: Linkedin },
-  { label: 'GitHub', value: 'sarahatawi-ctrl', href: 'https://github.com/sarahatawi-ctrl', icon: Github },
-  { label: 'Phone', value: '+966553592093', href: 'tel:+966553592093', icon: Phone },
-  { label: 'Email', value: 'srh.alatwi@gmail.com', href: 'mailto:srh.alatwi@gmail.com', icon: Mail },
+  { id: 'linkedin', label: { en: 'LinkedIn', ar: 'LinkedIn' }, value: { en: 'Sarah Atawi', ar: 'ساره عطوي' }, href: 'https://www.linkedin.com/in/sarah-atawi-332922291/', icon: Linkedin, ltr: false },
+  { id: 'github', label: { en: 'GitHub', ar: 'GitHub' }, value: { en: 'sarahatawi-ctrl', ar: 'sarahatawi-ctrl' }, href: 'https://github.com/sarahatawi-ctrl', icon: Github, ltr: true },
+  { id: 'phone', label: { en: 'Phone', ar: 'الجوال' }, value: { en: '+966553592093', ar: '+966553592093' }, href: 'tel:+966553592093', icon: Phone, ltr: true },
+  { id: 'email', label: { en: 'Email', ar: 'البريد الإلكتروني' }, value: { en: 'srh.alatwi@gmail.com', ar: 'srh.alatwi@gmail.com' }, href: 'mailto:srh.alatwi@gmail.com', icon: Mail, ltr: true },
 ];
 
 const certificateAssets = [
-  { src: `${import.meta.env.BASE_URL}certificates/certificate-01.png`, alt: 'Certificate' },
-  { src: `${import.meta.env.BASE_URL}certificates/certificate-02.png`, alt: 'Certificate' },
-  { src: `${import.meta.env.BASE_URL}certificates/certificate-03.png`, alt: 'Certificate' },
-  { src: `${import.meta.env.BASE_URL}certificates/certificate-04.png`, alt: 'Certificate' },
+  { src: `${import.meta.env.BASE_URL}certificates/certificate-01.png`, alt: { en: 'Cisco Networking Academy certificate: CCNAv7 Introduction to Networks', ar: 'شهادة أكاديمية Cisco للشبكات: مقدمة في الشبكات CCNAv7' } },
+  { src: `${import.meta.env.BASE_URL}certificates/certificate-02.png`, alt: { en: 'Oracle Academy award of course completion: Database Foundations', ar: 'شهادة إتمام مقرر من Oracle Academy: أساسيات قواعد البيانات' } },
+  { src: `${import.meta.env.BASE_URL}certificates/certificate-03.png`, alt: { en: 'IBM course certificate on Coursera: Introduction to UX/UI Design', ar: 'شهادة مقرر من IBM عبر Coursera: مقدمة في تصميم واجهات المستخدم وتجربته' } },
+  { src: `${import.meta.env.BASE_URL}certificates/certificate-04.png`, alt: { en: 'Coursera Project Network certificate: Data Analysis Fundamentals using Google Sheets', ar: 'شهادة مشروع من Coursera: أساسيات تحليل البيانات باستخدام جداول بيانات Google' } },
 ];
 
 const cooperativeTrainingCertificate = `${import.meta.env.BASE_URL}experience/cooperative-training-certificate.png`;
@@ -82,14 +82,14 @@ function LanguageGate({ onChoose }: { onChoose: (lang: Language) => void }) {
       <div className="language-gate__halo language-gate__halo--blue" />
 
       <div className="relative z-10 flex w-full max-w-5xl flex-col items-center text-center">
-        <p className="mb-7 font-mono-custom text-[10px] uppercase tracking-[0.32em] text-primary sm:mb-9">Personal archive / portfolio</p>
+        <p className="mb-7 font-mono-custom text-[10px] uppercase tracking-[0.32em] text-primary sm:mb-9">Personal archive / portfolio <span aria-hidden="true">· </span><span className="font-arabic normal-case tracking-normal" lang="ar" dir="rtl">ملف الأعمال</span></p>
         <h1 className="language-gate__title text-foreground" data-testid="text-gate-title">
           <span className="language-gate__title-name">Sarah Atawi</span>
           <span className="language-gate__title-word">Portfolio<b>.</b></span>
         </h1>
-        <p className="mt-8 font-mono-custom text-[10px] uppercase tracking-[0.24em] text-muted-foreground">Choose a language</p>
+        <p className="mt-8 font-mono-custom text-[10px] uppercase tracking-[0.24em] text-muted-foreground">Choose a language <span aria-hidden="true">· </span><span className="font-arabic text-[12px] normal-case tracking-normal" lang="ar" dir="rtl">اختر لغة العرض</span></p>
 
-        <div className="language-gate__choices" role="group" aria-label="Choose portfolio language">
+        <div className="language-gate__choices" role="group" aria-label="Choose portfolio language — اختر لغة العرض">
           {(['en', 'ar'] as Language[]).map((language) => (
             <button
               key={language}
@@ -101,7 +101,7 @@ function LanguageGate({ onChoose }: { onChoose: (lang: Language) => void }) {
               onClick={() => onChoose(language)}
               className={`language-orb language-orb--${language} ${hovered === language ? 'is-hovered' : ''}`}
               data-testid={`button-language-${language}`}
-              aria-label={`Enter portfolio in ${language === 'en' ? 'English' : 'Arabic'}`}
+              aria-label={language === 'en' ? 'Enter portfolio in English' : 'الدخول إلى ملف الأعمال باللغة العربية'}
             >
               <span className="language-orb__label">{language === 'en' ? 'English' : 'العربية'}</span>
             </button>
@@ -110,8 +110,8 @@ function LanguageGate({ onChoose }: { onChoose: (lang: Language) => void }) {
       </div>
 
       <div className="absolute bottom-7 left-6 right-6 flex items-end justify-between border-t border-border/70 pt-4 font-mono-custom text-[9px] uppercase tracking-[0.18em] text-muted-foreground sm:bottom-9 sm:left-10 sm:right-10">
-        <span>Computer Science · Mobile · UI/UX</span>
-        <span className="hidden sm:inline">Select your language</span>
+        <span>Computer Science Graduate <span aria-hidden="true">· </span><span className="font-arabic normal-case tracking-normal" lang="ar" dir="rtl">خريجة علوم الحاسب</span></span>
+        <span className="hidden sm:inline">Select your language <span aria-hidden="true">· </span><span className="font-arabic normal-case tracking-normal" lang="ar" dir="rtl">اختر لغتك</span></span>
       </div>
     </main>
   );
@@ -119,7 +119,7 @@ function LanguageGate({ onChoose }: { onChoose: (lang: Language) => void }) {
 
 function LanguageSwitcher({ lang, onChange }: { lang: Language; onChange: (language: Language) => void }) {
   return (
-    <div className="flex items-center gap-1 border border-border/80 p-1 text-[10px] font-medium tracking-[0.12em]" aria-label="Language selector">
+    <div className="flex items-center gap-1 border border-border/80 p-1 text-[10px] font-medium tracking-[0.12em]" role="group" aria-label={lang === 'ar' ? 'اختيار اللغة' : 'Language selector'}>
       {(['en', 'ar'] as Language[]).map((language) => (
         <button
           key={language}
@@ -127,6 +127,8 @@ function LanguageSwitcher({ lang, onChange }: { lang: Language; onChange: (langu
           onClick={() => onChange(language)}
           className={`px-2 py-1.5 transition-colors ${lang === language ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}
           data-testid={`button-switch-language-${language}`}
+          lang={language}
+          title={language === 'en' ? 'English' : 'العربية'}
           aria-pressed={lang === language}
         >
           {language === 'en' ? 'EN' : 'ع'}
@@ -149,11 +151,11 @@ function SiteNav({ lang, onChange }: { lang: Language; onChange: (language: Lang
   return (
     <header className="fixed inset-x-0 top-0 z-30 border-b border-border/50 bg-background/80 backdrop-blur-xl" data-testid="site-navigation">
       <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-6 sm:px-10 lg:px-14">
-        <a href="#top" className="group flex items-center gap-3" data-testid="link-home">
+        <a href="#top" className="group flex items-center gap-3" data-testid="link-home" aria-label={lang === 'ar' ? 'ساره عطوي، الصفحة الرئيسية' : 'Sarah Atawi, home'}>
           <span className="grid h-7 w-7 place-items-center border border-primary/70 text-xs font-semibold text-primary">SA</span>
           <span className="hidden text-xs tracking-[0.12em] text-foreground sm:block">{lang === 'ar' ? 'ساره عطوي' : 'Sarah Atawi'}</span>
         </a>
-        <nav className="hidden items-center gap-6 md:flex lg:gap-8" aria-label="Main navigation">
+        <nav className="hidden items-center gap-6 md:flex lg:gap-8" aria-label={lang === 'ar' ? 'التنقل الرئيسي' : 'Main navigation'}>
           {links.map((link) => (
             <a key={link.href} href={link.href} className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground" data-testid={`link-nav-${link.href.slice(1)}`}>
               {link.label}
@@ -163,13 +165,13 @@ function SiteNav({ lang, onChange }: { lang: Language; onChange: (language: Lang
         </nav>
         <div className="flex items-center gap-3 md:hidden">
           <LanguageSwitcher lang={lang} onChange={onChange} />
-          <button type="button" className="grid h-9 w-9 place-items-center border border-border text-foreground" onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} data-testid="button-mobile-menu">
+          <button type="button" className="grid h-9 w-9 place-items-center border border-border text-foreground" onClick={() => setOpen(!open)} aria-label={lang === 'ar' ? (open ? 'إغلاق القائمة' : 'فتح القائمة') : (open ? 'Close menu' : 'Open menu')} aria-expanded={open} data-testid="button-mobile-menu">
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>
       </div>
       {open && (
-        <nav className="border-t border-border/60 px-6 py-5 md:hidden" aria-label="Mobile navigation">
+        <nav className="border-t border-border/60 px-6 py-5 md:hidden" aria-label={lang === 'ar' ? 'قائمة التنقل' : 'Mobile navigation'}>
           <div className="flex flex-col gap-5">
             {links.map((link) => (
               <a key={link.href} href={link.href} onClick={() => setOpen(false)} className="text-sm text-muted-foreground transition-colors hover:text-foreground" data-testid={`link-mobile-nav-${link.href.slice(1)}`}>{link.label}</a>
@@ -191,7 +193,7 @@ function SectionHeading({ children, number, id, className = '' }: { children: st
   );
 }
 
-function CertificateGallery() {
+function CertificateGallery({ lang }: { lang: Language }) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const selectedCertificate = selectedIndex === null ? null : certificateAssets[selectedIndex];
 
@@ -222,9 +224,9 @@ function CertificateGallery() {
             type="button"
             onClick={() => setSelectedIndex(index)}
             className="certificate-card group relative overflow-hidden border border-border/80 bg-secondary/35 p-2 text-left transition-colors hover:border-primary/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            aria-label="Open certificate"
+            aria-label={lang === 'ar' ? `عرض ${certificate.alt.ar}` : `Open ${certificate.alt.en}`}
           >
-            <img src={certificate.src} alt={certificate.alt} className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.015]" />
+            <img src={certificate.src} alt={localized(certificate.alt, lang)} loading="lazy" className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.015]" />
             <span className="absolute bottom-4 right-4 grid h-9 w-9 place-items-center border border-border/80 bg-background/85 text-primary opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" aria-hidden="true">
               <ArrowUpRight className="h-4 w-4" />
             </span>
@@ -237,18 +239,18 @@ function CertificateGallery() {
           className="fixed inset-0 z-50 grid place-items-center bg-background/95 p-4 backdrop-blur-sm sm:p-8"
           role="dialog"
           aria-modal="true"
-          aria-label="Certificate preview"
+          aria-label={lang === 'ar' ? 'معاينة الشهادة' : 'Certificate preview'}
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) setSelectedIndex(null);
           }}
         >
           <div className="relative flex max-h-full max-w-6xl items-center justify-center">
-            <img src={selectedCertificate.src} alt={selectedCertificate.alt} className="max-h-[calc(100dvh-2rem)] max-w-full object-contain sm:max-h-[calc(100dvh-4rem)]" />
+            <img src={selectedCertificate.src} alt={localized(selectedCertificate.alt, lang)} className="max-h-[calc(100dvh-2rem)] max-w-full object-contain sm:max-h-[calc(100dvh-4rem)]" />
             <button
               type="button"
               onClick={() => setSelectedIndex(null)}
               className="absolute right-2 top-2 grid h-10 w-10 place-items-center border border-border/80 bg-background/90 text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:right-4 sm:top-4"
-              aria-label="Close certificate preview"
+              aria-label={lang === 'ar' ? 'إغلاق معاينة الشهادة' : 'Close certificate preview'}
             >
               <X className="h-5 w-5" />
             </button>
@@ -259,16 +261,16 @@ function CertificateGallery() {
   );
 }
 
-function ProjectVisual({ project, large = false }: { project: Project; large?: boolean }) {
+function ProjectVisual({ project, large = false, lang = 'en' }: { project: Project; large?: boolean; lang?: Language }) {
   const visualAsset = large ? project.heroAsset : project.cardAsset;
   const visualAlt = large ? project.heroAlt : project.cardAlt;
   return (
     <div className={`project-visual relative overflow-hidden border border-border/80 bg-secondary/60 ${large ? 'aspect-[16/8]' : 'aspect-[16/10]'}`} style={{ ['--project-accent' as string]: project.accent }} data-testid={`visual-project-${project.slug}`}>
       <div className="absolute inset-0 opacity-70" style={{ background: `radial-gradient(circle at 72% 25%, ${project.accent}40, transparent 34%), linear-gradient(135deg, transparent 35%, ${project.accent}10 36%, transparent 60%)` }} />
-      <img src={projectAsset(visualAsset)} alt={localized(visualAlt, 'en')} className={`project-visual__image ${large ? '' : `project-visual__image--${project.slug}`} absolute inset-0 h-full w-full object-center transition-transform duration-700 group-hover:scale-[1.025]`} />
+      <img src={projectAsset(visualAsset)} alt={localized(visualAlt, lang)} className={`project-visual__image ${large ? '' : `project-visual__image--${project.slug}`} absolute inset-0 h-full w-full object-center transition-transform duration-700 group-hover:scale-[1.025]`} />
       <div className="absolute inset-0 bg-gradient-to-t from-background/75 via-transparent to-transparent" />
-      <span className="absolute bottom-5 left-5 font-mono-custom text-[10px] tracking-[0.2em] text-foreground/75">{project.index} / STUDY</span>
-      <span className="absolute right-5 top-5 h-2 w-2 rounded-full bg-[var(--project-accent)]" />
+      <span className="absolute bottom-5 start-5 font-mono-custom text-[10px] tracking-[0.2em] text-foreground/75">{lang === 'ar' ? `دراسة / ${project.index}` : `${project.index} / STUDY`}</span>
+      <span className="absolute end-5 top-5 h-2 w-2 rounded-full bg-[var(--project-accent)]" />
     </div>
   );
 }
@@ -283,7 +285,7 @@ function RepoButton({ project, lang, size = 'sm' }: { project: Project; lang: La
       <a href={project.repositoryUrl} target="_blank" rel="noreferrer" className={`repo-button group/repo ${base} border-primary/40 bg-primary/5 text-foreground transition-colors hover:border-primary hover:bg-primary/10`} data-testid={`link-repo-${project.slug}`}>
         <SiGithub className={size === 'lg' ? 'h-5 w-5 text-primary' : 'h-3.5 w-3.5 text-primary'} aria-hidden="true" />
         <span>{c.github}</span>
-        <ArrowUpRight className="h-3.5 w-3.5 text-primary transition-transform group-hover/repo:-translate-y-0.5 group-hover/repo:translate-x-0.5" aria-hidden="true" />
+        <ArrowUpRight className={`h-3.5 w-3.5 text-primary transition-transform group-hover/repo:-translate-y-0.5 ${lang === 'ar' ? '-scale-x-100 group-hover/repo:-translate-x-0.5' : 'group-hover/repo:translate-x-0.5'}`} aria-hidden="true" />
       </a>
     );
   }
@@ -307,7 +309,7 @@ function ProjectCard({ project, lang }: { project: Project; lang: Language }) {
     <Reveal className="h-full">
       <article className="project-card group flex h-full flex-col" data-testid={`card-project-${project.slug}`}>
         <Link href={`/work/${project.slug}`} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" aria-label={`${c.viewCase}: ${lang === 'ar' ? project.arabicTitle : project.title}`} data-testid={`link-project-${project.slug}`}>
-          <ProjectVisual project={project} />
+          <ProjectVisual project={project} lang={lang} />
         </Link>
         <div className="mt-6 flex flex-1 flex-col">
           <p className="flex items-center gap-3 font-mono-custom text-[10px] uppercase tracking-[0.18em] text-primary">
@@ -324,7 +326,7 @@ function ProjectCard({ project, lang }: { project: Project; lang: Language }) {
               {shownSkills.map((skill) => (
                 <li key={skill.en} className="project-chip" dir="auto">{localized(skill, lang)}</li>
               ))}
-              {skills.length > shownSkills.length && <li className="project-chip project-chip--more">+{skills.length - shownSkills.length}</li>}
+              {skills.length > shownSkills.length && <li className="project-chip project-chip--more" dir="ltr">+{skills.length - shownSkills.length}</li>}
             </ul>
           )}
           {project.team && (
@@ -359,7 +361,7 @@ function ProjectHeroMedia({ project, lang }: { project: Project; lang: Language 
       </div>
     );
   }
-  return <ProjectVisual project={project} large />;
+  return <ProjectVisual project={project} large lang={lang} />;
 }
 
 function ProjectMediaGallery({ media, lang, compact = false }: { media: ProjectMedia[]; lang: Language; compact?: boolean }) {
@@ -420,8 +422,8 @@ function ProjectMediaGallery({ media, lang, compact = false }: { media: ProjectM
             <div className="mt-4 flex items-center gap-4">
               <p className="font-mono-custom text-xs text-muted-foreground">{String((selectedIndex ?? 0) + 1).padStart(2, '0')} / {String(media.length).padStart(2, '0')}</p>
               <div className="flex gap-2">
-                <button type="button" className="grid h-10 w-10 place-items-center border border-border/80 bg-background/90 text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" onClick={() => setSelectedIndex((current) => current === null ? null : (current - 1 + media.length) % media.length)} aria-label={copy[lang].previous} data-testid="button-previous-project-media"><ChevronLeft className="h-4 w-4" /></button>
-                <button type="button" className="grid h-10 w-10 place-items-center border border-border/80 bg-background/90 text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" onClick={() => setSelectedIndex((current) => current === null ? null : (current + 1) % media.length)} aria-label={copy[lang].next} data-testid="button-next-project-media"><ChevronRight className="h-4 w-4" /></button>
+                <button type="button" className="grid h-10 w-10 place-items-center border border-border/80 bg-background/90 text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" onClick={() => setSelectedIndex((current) => current === null ? null : (current - 1 + media.length) % media.length)} aria-label={copy[lang].previous} data-testid="button-previous-project-media">{lang === 'ar' ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}</button>
+                <button type="button" className="grid h-10 w-10 place-items-center border border-border/80 bg-background/90 text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" onClick={() => setSelectedIndex((current) => current === null ? null : (current + 1) % media.length)} aria-label={copy[lang].next} data-testid="button-next-project-media">{lang === 'ar' ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}</button>
               </div>
             </div>
             <button type="button" className="absolute -top-12 end-0 grid h-10 w-10 place-items-center border border-border/80 bg-background/90 text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" onClick={() => setSelectedIndex(null)} aria-label={copy[lang].close} data-testid="button-close-project-media"><X className="h-5 w-5" /></button>
@@ -531,7 +533,7 @@ function HomePage({ lang, onChange }: { lang: Language; onChange: (language: Lan
                 <p className="home-hero__role home-hero__role--ar" lang="ar" dir="rtl">
                   <span>خريجة علوم الحاسب</span>
                   <span>مطوّرة تطبيقات جوّال</span>
-                  <span>مصممة UI/UX</span>
+                  <span>مصممة واجهات وتجربة مستخدم</span>
                 </p>
               ) : (
                 <p className="home-hero__role">
@@ -547,12 +549,12 @@ function HomePage({ lang, onChange }: { lang: Language; onChange: (language: Lan
                 </a>
                 <a href="#contact" className="inline-flex items-center gap-2 border border-border px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.13em] text-muted-foreground transition-colors hover:border-primary hover:text-foreground" data-testid="link-contact-me">{c.contactMe}</a>
               </div>
-               <div className="home-hero__socials" aria-label="Social links">
+               <div className="home-hero__socials" aria-label={lang === 'ar' ? 'حساباتي' : 'Social links'}>
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
                   return (
                     <a key={social.label} href={social.href} target="_blank" rel="noreferrer" data-testid={`link-hero-social-${social.label.toLowerCase()}`}>
-                      <Icon className="h-3.5 w-3.5" aria-hidden="true" />{social.label}<span aria-hidden="true">↗</span>
+                      <Icon className="h-3.5 w-3.5" aria-hidden="true" />{social.label}<span aria-hidden="true">{lang === 'ar' ? '↖' : '↗'}</span>
                     </a>
                   );
                 })}
@@ -622,13 +624,13 @@ function HomePage({ lang, onChange }: { lang: Language; onChange: (language: Lan
                 <div key={item.name} className="experience-item border-b border-border/80 py-7">
                   <span className="block font-display text-3xl leading-tight tracking-[-0.04em]">{lang === 'ar' ? item.arabicName : item.name}</span>
                   <span className="text-xs uppercase tracking-[0.12em] text-muted-foreground">{localized(item.role, lang)}</span>
-                  <span className="ml-3 text-xs text-primary">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="ms-3 text-xs text-primary">{String(index + 1).padStart(2, '0')}</span>
                   <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground">{localized(item.note, lang)}</p>
                 </div>
               ))}
               </div>
-               <div className="experience-certificate mx-auto w-full max-w-[300px] border border-border/80 bg-card/50 p-3 lg:justify-self-end" data-testid="certificate-cooperative-training">
-                <img src={cooperativeTrainingCertificate} alt={lang === 'ar' ? 'شهادة التدريب التعاوني' : 'Cooperative training certificate'} className="block h-auto w-full" />
+               <div className="experience-certificate mx-auto w-full max-w-[300px] border border-border/80 bg-card/50 p-3 lg:justify-self-end" data-testid="certificate-cooperative-training" data-label={lang === 'ar' ? 'وثيقة / التدريب التعاوني' : 'DOCUMENT / COOPERATIVE TRAINING'}>
+                <img loading="lazy" src={cooperativeTrainingCertificate} alt={lang === 'ar' ? 'شهادة التدريب التعاوني' : 'Cooperative training certificate'} className="block h-auto w-full" />
               </div>
              </div>
         </section>
@@ -677,7 +679,7 @@ function HomePage({ lang, onChange }: { lang: Language; onChange: (language: Lan
         </section>
 
 
-         <section className="credentials-section mx-auto grid max-w-[1440px] gap-12 px-6 py-28 sm:px-10 sm:py-36 lg:grid-cols-2 lg:px-14" aria-label={`${c.workshops} and ${c.certifications}`}>
+         <section className="credentials-section mx-auto grid max-w-[1440px] gap-12 px-6 py-28 sm:px-10 sm:py-36 lg:grid-cols-2 lg:px-14" aria-label={lang === 'ar' ? `${c.workshops} و${c.certifications}` : `${c.workshops} and ${c.certifications}`}>
           {[{ title: c.workshops, items: workshops, kind: 'workshops' }, { title: c.certifications, items: [], kind: 'certifications' }].map((group) => (
              <div key={group.title} className={`${group.kind === 'certifications' ? 'certifications-panel lg:col-span-2' : 'workshops-panel'} border-t border-border pt-6`}>
               <div className="flex items-center justify-between">
@@ -686,7 +688,7 @@ function HomePage({ lang, onChange }: { lang: Language; onChange: (language: Lan
               </div>
               {group.kind === 'certifications' ? (
                 <div className="mt-8">
-                  <CertificateGallery />
+                  <CertificateGallery lang={lang} />
                 </div>
               ) : (
                 <div className="mt-8">
@@ -708,17 +710,18 @@ function HomePage({ lang, onChange }: { lang: Language; onChange: (language: Lan
             <div className="mt-16 grid gap-10 border-t border-border pt-7 md:grid-cols-[1fr_auto] md:items-end">
               <p className="max-w-md text-sm leading-7 text-muted-foreground">{c.contactBody}</p>
               <a href="mailto:srh.alatwi@gmail.com" className="group inline-flex w-fit items-center gap-4 border-b border-primary pb-3 text-sm text-foreground transition-colors hover:text-primary" data-testid="link-say-hello">
-                <Mail className="h-4 w-4 text-primary" aria-hidden="true" />{c.sayHello}<ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+                <Mail className="h-4 w-4 text-primary" aria-hidden="true" />{c.sayHello}<ArrowUpRight className={`h-4 w-4 transition-transform group-hover:-translate-y-1 ${lang === 'ar' ? '-scale-x-100 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
               </a>
             </div>
              <div className="contact-links contact-links--row mt-20 grid border-t border-border/70 pt-6 sm:grid-cols-2 lg:grid-cols-4">
               {contactLinks.map((contact) => {
                 const Icon = contact.icon;
+                const label = localized(contact.label, lang);
                 const external = contact.href.startsWith('http');
                 return (
-                  <a key={contact.label} href={contact.href} {...(external ? { target: '_blank', rel: 'noreferrer' } : {})} className="contact-link group flex items-center gap-3 border-b border-border/70 py-5 text-foreground transition-colors hover:text-primary sm:border-r sm:px-5 sm:first:pl-0 lg:border-b-0 lg:border-r lg:last:border-r-0" data-testid={`link-contact-${contact.label.toLowerCase()}`}>
+                  <a key={contact.id} href={contact.href} {...(external ? { target: '_blank', rel: 'noreferrer' } : {})} className="contact-link group flex items-center gap-3 border-b border-border/70 py-5 text-foreground transition-colors hover:text-primary sm:border-e sm:px-5 sm:first:ps-0 lg:border-b-0 lg:border-e lg:last:border-e-0" data-testid={`link-contact-${contact.id}`}>
                     <span className="grid h-9 w-9 shrink-0 place-items-center border border-border text-primary transition-colors group-hover:border-primary"><Icon className="h-4 w-4" aria-hidden="true" /></span>
-                    <span className="min-w-0"><span className="block font-mono-custom text-[9px] uppercase tracking-[0.16em] text-muted-foreground">{contact.label}</span><span className="mt-1 block truncate text-sm">{contact.value}</span></span>
+                    <span className="min-w-0"><span className="block font-mono-custom text-[9px] uppercase tracking-[0.16em] text-muted-foreground">{label}</span><span className="mt-1 block truncate text-sm" dir={contact.ltr ? 'ltr' : undefined} style={contact.ltr ? { textAlign: lang === 'ar' ? 'right' : 'left' } : undefined}>{localized(contact.value, lang)}</span></span>
                   </a>
                 );
               })}
@@ -728,7 +731,7 @@ function HomePage({ lang, onChange }: { lang: Language; onChange: (language: Lan
       </main>
       <footer className="border-t border-border/70 px-6 py-7 sm:px-10 lg:px-14">
         <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-3 text-[10px] uppercase tracking-[0.17em] text-muted-foreground sm:flex-row">
-          <span>{c.footer}</span><span>© {new Date().getFullYear()} / All rights reserved</span>
+          <span>{c.footer}</span><span>© {new Date().getFullYear()} / {lang === 'ar' ? 'جميع الحقوق محفوظة' : 'All rights reserved'}</span>
         </div>
       </footer>
     </div>
@@ -772,12 +775,12 @@ function getSectionContent(project: Project, sectionKey: string, lang: Language)
   if (sectionKey === 'problem') {
     if (project.slug === 'talaqi') return { en: 'Young adults and lifelong learners in Saudi Arabia lack a dedicated, structured platform for direct peer-to-peer knowledge sharing. General social platforms and formal course providers do not combine local skill exchange with volunteer-hour tracking and guided learning support.', ar: 'يفتقر الشباب والمتعلمون مدى الحياة في المملكة العربية السعودية إلى منصة مخصصة ومنظمة لتبادل المعرفة مباشرة بين الأقران. ولا تجمع المنصات الاجتماعية العامة أو منصات الدورات الرسمية بين تبادل المهارات محليًا وتتبع الساعات التطوعية والدعم الإرشادي للتعلّم.' };
     if (project.slug === 'rateel') return { en: 'The need for a modern interface and integrated digital experience for daily spiritual practice.', ar: 'الحاجة إلى واجهة عصرية وتجربة رقمية متكاملة للممارسات الروحية اليومية.' };
-    if (project.slug === 'banner-system') return { en: 'The redesign addressed schedule access, language switching and RTL layout, an overwhelming academic transcript, unclear attendance records, dead ends and navigation recovery, outdated visual design, complex academic processes and study plan, and inconsistent branding, typography, and logo.', ar: 'عالجت إعادة التصميم الوصول إلى الجدول، وتبديل اللغة وتخطيط RTL، والسجل الأكاديمي المربك، وعدم وضوح سجلات الحضور، والنهايات المغلقة واستعادة التنقل، والتصميم البصري القديم، وتعقيد الإجراءات الأكاديمية والخطة الدراسية، وعدم اتساق الهوية والخط والشعار.' };
+    if (project.slug === 'banner-system') return { en: 'The redesign addressed schedule access, language switching and RTL layout, an overwhelming academic transcript, unclear attendance records, dead ends and navigation recovery, outdated visual design, complex academic processes and study plan, and inconsistent branding, typography, and logo.', ar: 'عالجت إعادة التصميم الوصول إلى الجدول، وتبديل اللغة وتخطيط الواجهة من اليمين إلى اليسار، والسجل الأكاديمي المربك، وعدم وضوح سجلات الحضور، والنهايات المغلقة واستعادة التنقل، والتصميم البصري القديم، وتعقيد الإجراءات الأكاديمية والخطة الدراسية، وعدم اتساق الهوية والخط والشعار.' };
   }
   if (sectionKey === 'solution') {
     if (project.slug === 'talaqi') return { en: 'Talaqi connects users as both learners and mentors through profiles, skill discovery, learning-session requests, and real-time messaging. It also records volunteer hours, awards milestone badges, provides a volunteer leaderboard, supports reporting and moderation, and offers educational guidance through an AI chatbot.', ar: 'يربط تلاقي المستخدمين بصفتهم متعلمين ومرشدين عبر الملفات الشخصية واكتشاف المهارات وطلبات الجلسات التعليمية والرسائل الفورية. كما يسجّل الساعات التطوعية، ويمنح شارات عند تحقيق الإنجازات، ويعرض لوحة للمتطوعين، ويدعم الإبلاغ والإشراف، ويوفّر إرشادًا تعليميًا عبر روبوت محادثة ذكي.' };
-    if (project.slug === 'rateel') return { en: 'Rateel brought a modern interface and integrated digital experience to users’ daily spiritual journey, with dynamic Default and Ramadan theming and audio/API support.', ar: 'قدّم رتيل واجهة عصرية وتجربة رقمية متكاملة للرحلة الروحية اليومية للمستخدمين، مع سمات ديناميكية للوضعين الافتراضي ورمضان، ودعم للصوت وواجهات API.' };
-    if (project.slug === 'banner-system') return { en: 'Solutions included a homepage schedule shortcut and weekly timetable, full RTL support, semester filtering, a collapsible transcript with GPA and credit emphasis, attendance filters and visual indicators, Back/Cancel and breadcrumbs, a modern PNU identity, a visual study-plan table with status colors, and direct shortcuts.', ar: 'شملت الحلول اختصار الجدول في الصفحة الرئيسية والجدول الأسبوعي، ودعم RTL الكامل، وتصفية الفصول، وسجلًا أكاديميًا قابلًا للطي مع إبراز المعدل والساعات، وفلاتر الحضور ومؤشرات بصرية، وأزرار الرجوع والإلغاء ومسارات التنقل، وهوية PNU عصرية، وجدولًا بصريًا للخطة الدراسية بألوان للحالات، واختصارات مباشرة.' };
+    if (project.slug === 'rateel') return { en: 'Rateel brought a modern interface and integrated digital experience to users’ daily spiritual journey, with dynamic Default and Ramadan theming and audio/API support.', ar: 'قدّم رتيل واجهة عصرية وتجربة رقمية متكاملة للرحلة الروحية اليومية للمستخدمين، مع سمات ديناميكية للوضعين الافتراضي ورمضان، ودعم للصوت والتكامل مع واجهات برمجة التطبيقات.' };
+    if (project.slug === 'banner-system') return { en: 'Solutions included a homepage schedule shortcut and weekly timetable, full RTL support, semester filtering, a collapsible transcript with GPA and credit emphasis, attendance filters and visual indicators, Back/Cancel and breadcrumbs, a modern PNU identity, a visual study-plan table with status colors, and direct shortcuts.', ar: 'شملت الحلول اختصار الجدول في الصفحة الرئيسية والجدول الأسبوعي، والدعم الكامل لاتجاه الكتابة من اليمين إلى اليسار، وتصفية الفصول، وسجلًا أكاديميًا قابلًا للطي مع إبراز المعدل والساعات، وفلاتر الحضور ومؤشرات بصرية، وأزرار الرجوع والإلغاء ومسارات التنقل، وهوية عصرية لجامعة الأميرة نورة، وجدولًا بصريًا للخطة الدراسية بألوان للحالات، واختصارات مباشرة.' };
   }
   return missing;
 }
@@ -1028,7 +1031,7 @@ function CaseStudyPage({ lang, onChange }: { lang: Language; onChange: (language
                 >
                   <SiGithub className="h-5 w-5 text-primary" aria-hidden="true" />
                   <span>GitHub</span>
-                  <ArrowUpRight className="h-4 w-4 text-primary transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" aria-hidden="true" />
+                  <ArrowUpRight className={`h-4 w-4 text-primary transition-transform group-hover:-translate-y-1 ${lang === 'ar' ? '-scale-x-100 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} aria-hidden="true" />
                 </a>
               ) : (
                 <div className="max-w-xl text-muted-foreground text-sm flex items-center gap-3 bg-secondary/10 p-4 border border-border/30 rounded-lg">
@@ -1052,7 +1055,8 @@ function CaseStudyPage({ lang, onChange }: { lang: Language; onChange: (language
 
 function NotFoundPage({ lang }: { lang: Language }) {
   const c = copy[lang];
-  return <main className="grid min-h-[100dvh] place-items-center px-6 text-center"><div><p className="font-mono-custom text-xs text-primary">404</p><h1 className="mt-5 font-display text-6xl">Page not found.</h1><Link href="/" className="mt-8 inline-block border-b border-primary pb-2 text-sm text-muted-foreground hover:text-primary" data-testid="link-not-found-home">{c.back}</Link></div></main>;
+  useEffect(() => { document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'; }, [lang]);
+  return <main className="grid min-h-[100dvh] place-items-center px-6 text-center"><div><p className="font-mono-custom text-xs text-primary">404</p><h1 className="mt-5 font-display text-6xl">{lang === 'ar' ? 'الصفحة غير موجودة.' : 'Page not found.'}</h1><Link href="/" className="mt-8 inline-block border-b border-primary pb-2 text-sm text-muted-foreground hover:text-primary" data-testid="link-not-found-home">{c.back}</Link></div></main>;
 }
 
 function RoutedPages({ lang, onChange }: { lang: Language | null; onChange: (language: Language) => void }) {
