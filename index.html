@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sarah Atawi — Computer Science Graduate</title>
+  <meta name="description" content="Sarah Atawi, Computer Science graduate interested in application development, UI/UX design, virtual reality and emerging technologies." />
+  <meta property="og:title" content="Sarah Atawi — Computer Science Graduate" />
+  <meta property="og:description" content="Application development, UI/UX design, virtual reality and emerging technologies." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/captain-crew.jpg" />
+  <meta name="theme-color" content="#f4efe7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#121016" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Naskh+Arabic:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="topbar" id="top">
+    <a class="mark" href="#top" aria-label="Sarah Atawi, home">
+      <span class="mark__glyph">SA</span>
+      <span class="mark__name" data-i18n="name">Sarah Atawi</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#interests" data-i18n="nav.interests">Interests</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#background" data-i18n="nav.background">Background</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <button class="lang" type="button" id="langToggle" aria-label="عرض الموقع بالعربية">
+      <span data-lang="en">EN</span><span data-lang="ar">ع</span>
+    </button>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="eyebrow reveal" data-i18n="hero.kicker">Computer Science Graduate</p>
+        <h1 class="hero__title reveal" id="hero-title">
+          <span data-i18n="hero.first">Sarah</span>
+          <em data-i18n="hero.last">Atawi</em>
+        </h1>
+        <p class="hero__lede reveal" data-i18n="hero.lede">I build mobile applications, design interfaces people enjoy using, and explore what virtual reality and emerging technologies make possible.</p>
+        <div class="hero__actions reveal">
+          <a class="btn btn--solid" href="#work" data-i18n="hero.cta1">Selected work</a>
+          <a class="btn" href="#contact" data-i18n="hero.cta2">Get in touch</a>
+        </div>
+      </div>
+
+      <figure class="orbit reveal" aria-hidden="true">
+        <svg viewBox="0 0 400 400" class="orbit__svg">
+          <circle cx="200" cy="200" r="70" class="ring" />
+          <circle cx="200" cy="200" r="115" class="ring" />
+          <circle cx="200" cy="200" r="160" class="ring" />
+          <circle cx="200" cy="200" r="196" class="ring ring--faint" />
+          <g class="spin spin--a"><circle cx="270" cy="200" r="6" class="dot" /></g>
+          <g class="spin spin--b"><circle cx="200" cy="85" r="5" class="dot dot--alt" /></g>
+          <g class="spin spin--c"><circle cx="40" cy="200" r="7" class="dot" /></g>
+          <g class="spin spin--d"><circle cx="200" cy="396" r="4" class="dot dot--alt" /></g>
+          <circle cx="200" cy="200" r="26" class="core" />
+        </svg>
+        <ul class="orbit__labels">
+          <li style="--i:0" data-i18n="int.apps.short">Apps</li>
+          <li style="--i:1" data-i18n="int.ux.short">UI/UX</li>
+          <li style="--i:2" data-i18n="int.vr.short">VR</li>
+          <li style="--i:3" data-i18n="int.emerging.short">Emerging tech</li>
+        </ul>
+      </figure>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <header class="section__head">
+        <span class="section__num">01</span>
+        <h2 id="about-title" data-i18n="about.title">About</h2>
+      </header>
+      <div class="about__body">
+        <p class="about__lead reveal" data-i18n="about.p1">Computer Science graduate from Princess Nourah bint Abdulrahman University, with hands-on experience building mobile applications in Flutter and Dart and designing user-centred interfaces in Figma.</p>
+        <p class="reveal" data-i18n="about.p2">I completed cooperative training at stc in partnership with Tata Consultancy Services, in the applications sector. I also took part in Tuwaiq Academy's intensive training camp in Emerging Technologies and Virtual Worlds, and co-developed Captain Crew, an immersive VR experience for Meta Quest 3.</p>
+        <p class="reveal" data-i18n="about.p3">Alongside my studies I led Google Developer Groups on Campus at PNU and served on the Student Council. I care about communication, leadership and continuous learning.</p>
+      </div>
+    </section>
+
+    <!-- INTERESTS -->
+    <section class="section interests" id="interests" aria-labelledby="interests-title">
+      <header class="section__head">
+        <span class="section__num">02</span>
+        <h2 id="interests-title" data-i18n="interests.title">Interests</h2>
+      </header>
+      <ol class="interest-grid">
+        <li class="interest reveal">
+          <svg class="interest__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="5" width="20" height="38" rx="4"/><path d="M21 37h6"/></svg>
+          <h3 data-i18n="int.apps.title">Application Development</h3>
+          <p data-i18n="int.apps.body">Mobile apps in Flutter and Dart, from clean architecture to API integration and real-time features.</p>
+        </li>
+        <li class="interest reveal">
+          <svg class="interest__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="38" height="30" rx="3"/><path d="M5 17h38M15 17v22"/></svg>
+          <h3 data-i18n="int.ux.title">UI/UX Design</h3>
+          <p data-i18n="int.ux.body">Design Thinking, user research, prototyping and usability testing in Figma, with careful Arabic RTL support.</p>
+        </li>
+        <li class="interest reveal">
+          <svg class="interest__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 17a4 4 0 0 1 4-4h30a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4h-9l-3-5h-6l-3 5H9a4 4 0 0 1-4-4z"/><circle cx="15" cy="24" r="3"/><circle cx="33" cy="24" r="3"/></svg>
+          <h3 data-i18n="int.vr.title">Virtual Reality</h3>
+          <p data-i18n="int.vr.body">Immersive experiences in Unity for Meta Quest 3, with natural hand interaction and in-world UI.</p>
+        </li>
+        <li class="interest reveal">
+          <svg class="interest__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="5"/><ellipse cx="24" cy="24" rx="19" ry="8"/><ellipse cx="24" cy="24" rx="19" ry="8" transform="rotate(60 24 24)"/><ellipse cx="24" cy="24" rx="19" ry="8" transform="rotate(120 24 24)"/></svg>
+          <h3 data-i18n="int.emerging.title">Emerging Technologies</h3>
+          <p data-i18n="int.emerging.body">Curious about where new platforms are heading, and how to turn them into useful, human experiences.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- WORK -->
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <header class="section__head">
+        <span class="section__num">03</span>
+        <h2 id="work-title" data-i18n="work.title">Selected work</h2>
+      </header>
+
+      <article class="feature reveal">
+        <a class="feature__media" href="https://sarah-atawi-portfolio.vercel.app/work/captain-crew" target="_blank" rel="noopener">
+          <img src="assets/captain-crew.jpg" alt="Virtual aircraft cabin in Captain Crew, with guided task markers along the aisle" data-i18n-alt="work.cc.alt" loading="lazy" width="1400" height="933" />
+        </a>
+        <div class="feature__body">
+          <p class="eyebrow" data-i18n="work.cc.cat">Virtual Reality · Team project</p>
+          <h3>Captain Crew</h3>
+          <p data-i18n="work.cc.body">An immersive Virtual Reality experience developed with Unity and Meta Quest 3: an interactive VR environment where participants engage with tasks and activities in a shared virtual experience.</p>
+          <p class="meta"><span data-i18n="work.team">Team</span> — <span data-i18n="work.cc.team">Sarah Atawi, Remas Al-Sultan, Jana Alhamedi</span></p>
+          <ul class="chips">
+            <li>Unity</li><li>C#</li><li>Meta Quest 3</li><li>XR Interaction Toolkit</li><li data-i18n="chip.vr">Virtual Reality</li><li data-i18n="chip.mp">Multi-device VR</li><li data-i18n="chip.ux">UI/UX Design</li><li>GitHub</li>
+          </ul>
+          <a class="link" href="https://sarah-atawi-portfolio.vercel.app/work/captain-crew" target="_blank" rel="noopener" data-i18n="work.case">Read the case study</a>
+        </div>
+      </article>
+
+      <div class="cards">
+        <article class="card reveal">
+          <a class="card__media card__media--logo" href="https://sarah-atawi-portfolio.vercel.app/work/talaqi" target="_blank" rel="noopener">
+            <img src="assets/talaqi.png" alt="Talaqi logo" data-i18n-alt="work.talaqi.alt" loading="lazy" />
+          </a>
+          <p class="eyebrow" data-i18n="work.talaqi.cat">Graduation project · Mobile</p>
+          <h3 data-i18n="work.talaqi.title">Talaqi</h3>
+          <p data-i18n="work.talaqi.body">A Flutter app for peer-to-peer skill exchange, with learning sessions, real-time messaging, volunteer-hour tracking and an AI chatbot.</p>
+          <a class="link" href="https://sarah-atawi-portfolio.vercel.app/work/talaqi" target="_blank" rel="noopener" data-i18n="work.case">Read the case study</a>
+        </article>
+        <article class="card reveal">
+          <a class="card__media card__media--light" href="https://sarah-atawi-portfolio.vercel.app/work/rateel" target="_blank" rel="noopener">
+            <img src="assets/rateel.png" alt="Rateel logo" data-i18n-alt="work.rateel.alt" loading="lazy" />
+          </a>
+          <p class="eyebrow" data-i18n="work.rateel.cat">Cooperative training · stc / TCS</p>
+          <h3 data-i18n="work.rateel.title">Rateel</h3>
+          <p data-i18n="work.rateel.body">Contributed UI/UX, responsive Flutter widgets, Clean Architecture, dynamic theming and audio streaming via external APIs.</p>
+          <a class="link" href="https://sarah-atawi-portfolio.vercel.app/work/rateel" target="_blank" rel="noopener" data-i18n="work.case">Read the case study</a>
+        </article>
+        <article class="card reveal">
+          <a class="card__media card__media--light" href="https://sarah-atawi-portfolio.vercel.app/work/banner-system" target="_blank" rel="noopener">
+            <img src="assets/banner-system.png" alt="Redesigned Banner System attendance screen" data-i18n-alt="work.banner.alt" loading="lazy" />
+          </a>
+          <p class="eyebrow" data-i18n="work.banner.cat">UI/UX redesign</p>
+          <h3 data-i18n="work.banner.title">Banner System</h3>
+          <p data-i18n="work.banner.body">A Design Thinking redesign of the university Banner System: schedules, transcripts, attendance, RTL and navigation.</p>
+          <a class="link" href="https://sarah-atawi-portfolio.vercel.app/work/banner-system" target="_blank" rel="noopener" data-i18n="work.case">Read the case study</a>
+        </article>
+      </div>
+      <p class="work__more"><a class="link" href="https://sarah-atawi-portfolio.vercel.app" target="_blank" rel="noopener" data-i18n="work.portfolio">Full portfolio</a></p>
+    </section>
+
+    <!-- BACKGROUND -->
+    <section class="section background" id="background" aria-labelledby="bg-title">
+      <header class="section__head">
+        <span class="section__num">04</span>
+        <h2 id="bg-title" data-i18n="bg.title">Background</h2>
+      </header>
+      <div class="bg-grid">
+        <div class="bg-col">
+          <h3 class="bg-col__title" data-i18n="bg.edu">Education</h3>
+          <dl class="entries">
+            <div class="entry reveal">
+              <dt data-i18n="edu.pnu.inst">Princess Nourah bint Abdulrahman University</dt>
+              <dd><strong data-i18n="edu.pnu.prog">Computer Science</strong><span class="tag" data-i18n="edu.pnu.type">Bachelor's degree</span></dd>
+            </div>
+            <div class="entry reveal">
+              <dt data-i18n="edu.tuwaiq.inst">Tuwaiq Academy</dt>
+              <dd><strong data-i18n="edu.tuwaiq.prog">Emerging Technologies and Virtual Worlds</strong><span class="tag tag--accent" data-i18n="edu.tuwaiq.type">Intensive Training Camp</span></dd>
+            </div>
+          </dl>
+        </div>
+        <div class="bg-col">
+          <h3 class="bg-col__title" data-i18n="bg.exp">Experience</h3>
+          <dl class="entries">
+            <div class="entry reveal">
+              <dt data-i18n="exp.tcs.org">Tata Consultancy Services (TCS) | stc</dt>
+              <dd><strong data-i18n="exp.tcs.role">Cooperative Training Intern, Applications Sector</strong>
+                <p data-i18n="exp.tcs.body">Enterprise application development within the stc environment: testing, debugging, technical documentation and software development workflows.</p></dd>
+            </div>
+          </dl>
+          <h3 class="bg-col__title bg-col__title--spaced" data-i18n="bg.lead">Leadership</h3>
+          <ul class="lead-list reveal">
+            <li><span data-i18n="lead.gdg">Leader, GDGoC at PNU</span><span class="when" data-i18n="lead.gdg.when">2024–2025</span></li>
+            <li><span data-i18n="lead.core">Core Team Member, GDGoC / GDSC at PNU</span><span class="when" data-i18n="lead.core.when">2023–2024</span></li>
+            <li><span data-i18n="lead.council">Student Council Member, PNU</span><span class="when">2025</span></li>
+            <li><span data-i18n="lead.ajyalna">Leader, Quality &amp; Development Committee, Ajyalna Alwaidah</span><span class="when">2025</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <header class="section__head">
+        <span class="section__num">05</span>
+        <h2 id="contact-title" data-i18n="contact.title">Contact</h2>
+      </header>
+      <p class="contact__big reveal"><span data-i18n="contact.line">Let's build something</span> <em data-i18n="contact.em">meaningful.</em></p>
+      <a class="contact__mail reveal" href="mailto:srh.alatwi@gmail.com">srh.alatwi@gmail.com</a>
+      <ul class="contact__links reveal">
+        <li><a href="https://www.linkedin.com/in/sarah-atawi-332922291/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://github.com/sarahatawi-ctrl" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+        <li><a href="tel:+966553592093" dir="ltr">+966 55 359 2093</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year">2026</span> <span data-i18n="name">Sarah Atawi</span></span>
+    <a href="#top" data-i18n="footer.top">Back to top ↑</a>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
