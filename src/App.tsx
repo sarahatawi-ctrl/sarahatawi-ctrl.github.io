@@ -4,6 +4,7 @@ import { SiAndroidstudio, SiDart, SiFirebase, SiFigma, SiFlutter, SiGithub, SiGo
 import { VscCode } from 'react-icons/vsc';
 import { Link, Route, Switch, useLocation, useParams } from 'wouter';
 import { ErrorBoundary } from '@/components/error-boundary';
+import { XRHero } from '@/components/xr-hero';
 import { copy, education, experience, interests, projects, leadershipCards, type LeadershipCard, type Language, type Project, type ProjectMedia, workshops } from '@/lib/content';
 
 type Localized = { en: string; ar: string };
@@ -75,7 +76,7 @@ function Reveal({ children, className = '' }: { children: ReactNode; className?:
 
 function LanguageGate({ onChoose }: { onChoose: (lang: Language) => void }) {
   const [hovered, setHovered] = useState<Language | null>(null);
-  useEffect(() => setSeo('Sarah Atawi — Computer Science Graduate', 'The personal portfolio of Sarah Atawi, Computer Science graduate, mobile application developer, and UI/UX designer.'), []);
+  useEffect(() => setSeo('Sarah Atawi — Computer Science Graduate', 'The personal portfolio of Sarah Atawi, Computer Science graduate, Application Developer and XR Developer.'), []);
   return (
     <main className="language-gate relative grid min-h-[100dvh] place-items-center overflow-hidden bg-background px-6 py-8" data-testid="language-gate">
       <div className="language-gate__halo language-gate__halo--violet" />
@@ -110,7 +111,7 @@ function LanguageGate({ onChoose }: { onChoose: (lang: Language) => void }) {
       </div>
 
       <div className="absolute bottom-7 left-6 right-6 flex items-end justify-between border-t border-border/70 pt-4 font-mono-custom text-[9px] uppercase tracking-[0.18em] text-muted-foreground sm:bottom-9 sm:left-10 sm:right-10">
-        <span>Computer Science Graduate <span aria-hidden="true">· </span><span className="font-arabic normal-case tracking-normal" lang="ar" dir="rtl">خريجة علوم الحاسب</span></span>
+        <span>Application &amp; XR Developer <span aria-hidden="true">· </span><span className="font-arabic normal-case tracking-normal" lang="ar" dir="rtl">مطوّرة تطبيقات وواقع ممتد</span></span>
         <span className="hidden sm:inline">Select your language <span aria-hidden="true">· </span><span className="font-arabic normal-case tracking-normal" lang="ar" dir="rtl">اختر لغتك</span></span>
       </div>
     </main>
@@ -512,7 +513,7 @@ function HomePage({ lang, onChange }: { lang: Language; onChange: (language: Lan
   useEffect(() => {
     setSeo(
       lang === 'ar' ? 'ساره عطوي — خريجة علوم الحاسب' : 'Sarah Atawi — Computer Science Graduate',
-      lang === 'ar' ? 'ملف الأعمال الشخصي لساره عطوي، خريجة علوم الحاسب ومطورة تطبيقات الجوال ومصممة UI/UX.' : 'The personal portfolio of Sarah Atawi, Computer Science graduate, mobile application developer, and UI/UX designer.',
+      lang === 'ar' ? 'ملف الأعمال الشخصي لساره عطوي، خريجة علوم الحاسب ومطوّرة تطبيقات ومطوّرة واقع ممتد (XR).' : 'The personal portfolio of Sarah Atawi, Computer Science graduate, Application Developer and XR Developer.',
     );
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
@@ -522,49 +523,7 @@ function HomePage({ lang, onChange }: { lang: Language; onChange: (language: Lan
     <div id="top" lang={lang} className={`min-h-[100dvh] overflow-hidden ${lang === 'ar' ? 'font-arabic' : ''}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <SiteNav lang={lang} onChange={onChange} />
       <main>
-        <section className={`home-hero relative mx-auto min-h-[100dvh] max-w-[1440px] px-6 sm:px-10 lg:px-14 ${lang === 'ar' ? 'home-hero--ar' : 'home-hero--en'}`} aria-labelledby="hero-name">
-          <span className="home-hero__ghost home-hero__ghost--one" aria-hidden="true">{lang === 'ar' ? 'ساره' : 'SARAH'}</span>
-          <span className="home-hero__ghost home-hero__ghost--two" aria-hidden="true">{lang === 'ar' ? 'عطوي' : 'ATAWI'}</span>
-          <div className="home-hero__layout">
-            <div className="home-hero__identity reveal">
-              <p className="home-hero__kicker">{lang === 'ar' ? 'ملف الأعمال' : 'Portfolio / 01'}</p>
-               <h1 id="hero-name" className="home-hero__name font-display">{lang === 'ar' ? 'ساره عطوي' : 'Sarah Atawi'}</h1>
-              {lang === 'ar' ? (
-                <p className="home-hero__role home-hero__role--ar" lang="ar" dir="rtl">
-                  <span>خريجة علوم الحاسب</span>
-                  <span>مطوّرة تطبيقات جوّال</span>
-                  <span>مصممة واجهات وتجربة مستخدم</span>
-                </p>
-              ) : (
-                <p className="home-hero__role">
-                  <span>Computer Science Graduate</span>
-                  <span>Mobile Application Developer</span>
-                  <span>UI/UX Designer</span>
-                </p>
-              )}
-              <p className="home-hero__bio">{c.heroBody}</p>
-              <div className="home-hero__actions">
-                <a href="#work-heading" className="group inline-flex items-center gap-3 border border-foreground bg-foreground px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.13em] text-background transition-colors hover:bg-primary hover:text-primary-foreground" data-testid="link-view-work">
-                  {c.viewWork}<ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-1" />
-                </a>
-                <a href="#contact" className="inline-flex items-center gap-2 border border-border px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.13em] text-muted-foreground transition-colors hover:border-primary hover:text-foreground" data-testid="link-contact-me">{c.contactMe}</a>
-              </div>
-               <div className="home-hero__socials" aria-label={lang === 'ar' ? 'حساباتي' : 'Social links'}>
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a key={social.label} href={social.href} target="_blank" rel="noreferrer" data-testid={`link-hero-social-${social.label.toLowerCase()}`}>
-                      <Icon className="h-3.5 w-3.5" aria-hidden="true" />{social.label}<span aria-hidden="true">{lang === 'ar' ? '↖' : '↗'}</span>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-           <div className="home-hero__scroll font-mono-custom">
-            <span className="h-px w-10 bg-border" /><span>{c.scroll}</span>
-          </div>
-        </section>
+        <XRHero lang={lang} viewWork={c.viewWork} contactMe={c.contactMe} scroll={c.scroll} />
 
          <section id="about" className="about-section mx-auto max-w-[1440px] scroll-mt-20 px-6 py-28 sm:px-10 sm:py-40 lg:px-14" aria-labelledby="about-heading">
            <SectionHeading number="01" id="about-heading">{c.aboutLabel}</SectionHeading>
@@ -588,7 +547,7 @@ function HomePage({ lang, onChange }: { lang: Language; onChange: (language: Lan
             </div>
             <ol className="interest-grid mt-16 grid border-t border-border/80 sm:grid-cols-2 lg:grid-cols-4">
               {interests.map((interest, index) => {
-                const Icon = ({ apps: Smartphone, ux: PenTool, vr: Glasses, emerging: Sparkles } as const)[interest.id];
+                const Icon = ({ apps: Smartphone, ux: PenTool, xr: Glasses, emerging: Sparkles } as const)[interest.id];
                 return (
                   <li key={interest.id} className="interest-card group border-b border-border/80 p-6 sm:p-8" data-testid={`interest-${interest.id}`}>
                     <div className="flex items-center justify-between">
