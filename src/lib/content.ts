@@ -125,11 +125,11 @@ export const projects: Project[] = [
     title: 'Rateel',
     arabicTitle: 'رتيل',
     category: 'STC / Tata Consultancy Services',
-    arabicCategory: 'stc / تاتا للخدمات الاستشارية',
+    arabicCategory: 'STC / تاتا للخدمات الاستشارية',
     context: 'Cooperative Training',
     arabicContext: 'التدريب التعاوني',
     intro: 'Contributed to the development of Rateel during cooperative training at STC in partnership with Tata Consultancy Services. Worked across UI/UX implementation, responsive Flutter widgets, navigation flows, Clean Architecture, API integration, dynamic theming, and audio streaming using external APIs. Tech: Flutter · Dart · Clean Architecture · API Integration · audio_service · just_audio · MP3Quran API',
-    arabicIntro: 'ساهمت في تطوير تطبيق رتيل خلال التدريب التعاوني في stc بالشراكة مع تاتا للخدمات الاستشارية. شملت المساهمة تنفيذ الواجهات وتجربة المستخدم، وعناصر Flutter متجاوبة، ومسارات التنقل، وتطبيق البنية النظيفة، والتكامل مع واجهات برمجة التطبيقات، والسمات الديناميكية، وبث الصوت عبر واجهات برمجية خارجية. التقنيات: Flutter · Dart · البنية النظيفة · التكامل مع واجهات برمجة التطبيقات · audio_service · just_audio · واجهة MP3Quran',
+    arabicIntro: 'ساهمت في تطوير تطبيق رتيل خلال التدريب التعاوني في STC بالشراكة مع تاتا للخدمات الاستشارية. شملت المساهمة تنفيذ الواجهات وتجربة المستخدم، وعناصر Flutter متجاوبة، ومسارات التنقل، وتطبيق البنية النظيفة، والتكامل مع واجهات برمجة التطبيقات، والسمات الديناميكية، وبث الصوت عبر واجهات برمجية خارجية. التقنيات: Flutter · Dart · البنية النظيفة · التكامل مع واجهات برمجة التطبيقات · audio_service · just_audio · واجهة MP3Quran',
     accent: '#bd9b70',
     cardAsset: 'rateel/gallery/page-005-image-00.png',
     cardAlt: { en: 'Rateel logo', ar: 'شعار رتيل' },
@@ -159,7 +159,7 @@ export const projects: Project[] = [
       role: {
         label: { en: 'My role', ar: 'دوري' },
         title: { en: 'From UI mockups to backend API integration.', ar: 'من النماذج الأولية للواجهات إلى الربط بالخدمات الخلفية.' },
-        body: { en: 'During cooperative training at TCS & STC, Sarah managed Rateel from initial UI mockups to backend API integration. Her source-supported role included UI/UX design, responsive widget implementation, seamless navigation flow, business-requirement meetings, mobile application development and enhancement, and alignment with STC architectural and security standards.', ar: 'خلال التدريب التعاوني في TCS وstc، أدارت ساره رتيل من النماذج الأولية الأولى للواجهات حتى التكامل مع واجهات برمجة التطبيقات الخلفية. وشمل دورها تصميم الواجهات وتجربة المستخدم، وتنفيذ عناصر متجاوبة، وبناء مسارات تنقل سلسة، واجتماعات متطلبات العمل، وتطوير وتحسين تطبيق الجوال، والالتزام بمعايير stc المعمارية والأمنية.' },
+        body: { en: 'During cooperative training at TCS & STC, Sarah managed Rateel from initial UI mockups to backend API integration. Her source-supported role included UI/UX design, responsive widget implementation, seamless navigation flow, business-requirement meetings, mobile application development and enhancement, and alignment with STC architectural and security standards.', ar: 'خلال التدريب التعاوني في TCS وSTC، أدارت ساره رتيل من النماذج الأولية الأولى للواجهات حتى التكامل مع واجهات برمجة التطبيقات الخلفية. وشمل دورها تصميم الواجهات وتجربة المستخدم، وتنفيذ عناصر متجاوبة، وبناء مسارات تنقل سلسة، واجتماعات متطلبات العمل، وتطوير وتحسين تطبيق الجوال، والالتزام بمعايير STC المعمارية والأمنية.' },
       },
       problemSolution: {
         label: { en: 'Problem / solution', ar: 'المشكلة والحل' },
@@ -169,7 +169,7 @@ export const projects: Project[] = [
       process: {
         label: { en: 'UI/UX process', ar: 'منهجية التصميم' },
         title: { en: 'Designed in conversation with the system around it.', ar: 'تصميم يتناغم مع النظام المحيط به.' },
-        body: { en: 'Work included business-requirement meetings, responsive widget implementation, seamless navigation flow, and alignment with STC architectural and security standards.', ar: 'شمل العمل اجتماعات متطلبات العمل، وتنفيذ عناصر متجاوبة، وبناء مسارات تنقل سلسة، والالتزام بمعايير stc المعمارية والأمنية.' },
+        body: { en: 'Work included business-requirement meetings, responsive widget implementation, seamless navigation flow, and alignment with STC architectural and security standards.', ar: 'شمل العمل اجتماعات متطلبات العمل، وتنفيذ عناصر متجاوبة، وبناء مسارات تنقل سلسة، والالتزام بمعايير STC المعمارية والأمنية.' },
       },
       technologies: {
         label: { en: 'Technologies', ar: 'التقنيات' },
@@ -385,12 +385,12 @@ export const interests = [
 
 export const experience = [
   {
-    name: 'Cooperative Training Intern — Tata Consultancy Services (TCS) | stc',
-    arabicName: 'متدربة تدريب تعاوني — تاتا للخدمات الاستشارية (TCS) | stc',
+    name: 'Cooperative Training Intern — Tata Consultancy Services (TCS) | STC',
+    arabicName: 'متدربة تدريب تعاوني — تاتا للخدمات الاستشارية (TCS) | STC',
     role: { en: 'Applications Sector', ar: 'قطاع التطبيقات' },
     note: {
-      en: 'Contributed to enterprise application development within the stc environment, with hands-on experience in application testing, debugging, technical documentation, and software development workflows.',
-      ar: 'ساهمت في تطوير تطبيقات مؤسسية ضمن بيئة stc، مع خبرة عملية في اختبار التطبيقات، وتصحيح الأخطاء، والتوثيق التقني، وسير عمل تطوير البرمجيات.',
+      en: 'Contributed to enterprise application development within the STC environment, with hands-on experience in application testing, debugging, technical documentation, and software development workflows.',
+      ar: 'ساهمت في تطوير تطبيقات مؤسسية ضمن بيئة STC، مع خبرة عملية في اختبار التطبيقات، وتصحيح الأخطاء، والتوثيق التقني، وسير عمل تطوير البرمجيات.',
     },
   },
 ];
@@ -519,7 +519,7 @@ export const copy = {
     viewCase: 'View case study',
     aboutLabel: 'A little context',
      aboutBody: 'Computer Science graduate from Princess Nourah bint Abdulrahman University focused on application development and XR development. Experienced in developing mobile applications using Flutter and Dart, building immersive Virtual Reality experiences in Unity for Meta Quest 3, and designing user-centered interfaces using Figma.',
-     aboutBody2: 'Completed cooperative training at stc in partnership with Tata Consultancy Services within the applications sector. Previously served as a Leader and Mentor at Google Developer Groups on Campus (GDGoC), a Member of the Student Advisory Council, and Leader of Quality & Development at the “Ajyalna Alwaidah” initiative. Demonstrates communication, leadership, and problem-solving skills, with a commitment to continuous learning and professional growth.',
+     aboutBody2: 'Completed cooperative training at STC in partnership with Tata Consultancy Services within the applications sector. Previously served as a Leader and Mentor at Google Developer Groups on Campus (GDGoC), a Member of the Student Advisory Council, and Leader of Quality & Development at the “Ajyalna Alwaidah” initiative. Demonstrates communication, leadership, and problem-solving skills, with a commitment to continuous learning and professional growth.',
     currently: 'Currently exploring',
      focus: 'Application development, XR development across virtual and augmented reality, immersive interaction in Unity, and continuous professional growth.',
     experience: 'Cooperative Training',
@@ -583,7 +583,7 @@ export const copy = {
     viewCase: 'استعرض المشروع',
     aboutLabel: 'نبذة عني',
      aboutBody: 'خريجة علوم الحاسب من جامعة الأميرة نورة بنت عبدالرحمن، أركّز على تطوير التطبيقات وتطوير الواقع الممتد (XR). أمتلك خبرة في تطوير تطبيقات الجوال باستخدام Flutter وDart، وبناء تجارب واقع افتراضي غامرة باستخدام Unity لنظارة Meta Quest 3، وتصميم واجهات تتمحور حول المستخدم باستخدام Figma.',
-     aboutBody2: 'أكملت التدريب التعاوني في stc بالشراكة مع شركة تاتا للخدمات الاستشارية ضمن قطاع التطبيقات. وسبق أن عملت قائدة ومرشدة في مجتمع مطوري Google في الحرم الجامعي (GDGoC)، وعضوًا في المجلس الاستشاري الطلابي، وقائدة للجودة والتطوير في مبادرة «أجيالنا الواعدة». أتمتع بمهارات التواصل والقيادة وحل المشكلات، مع التزام بالتعلم المستمر والنمو المهني.',
+     aboutBody2: 'أكملت التدريب التعاوني في STC بالشراكة مع شركة تاتا للخدمات الاستشارية ضمن قطاع التطبيقات. وسبق أن عملت قائدة ومرشدة في مجتمع مطوري Google في الحرم الجامعي (GDGoC)، وعضوًا في المجلس الاستشاري الطلابي، وقائدة للجودة والتطوير في مبادرة «أجيالنا الواعدة». أتمتع بمهارات التواصل والقيادة وحل المشكلات، مع التزام بالتعلم المستمر والنمو المهني.',
     currently: 'أستكشف حاليًا',
      focus: 'تطوير التطبيقات، وتطوير الواقع الممتد بشقّيه الافتراضي والمعزّز، والتفاعل الغامر باستخدام Unity، والنمو المهني المستمر.',
     experience: 'التدريب التعاوني',

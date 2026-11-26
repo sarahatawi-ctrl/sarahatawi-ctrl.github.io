@@ -52,24 +52,24 @@ const text = {
     lede: 'I build for two kinds of screens: the one in your pocket, and the one that surrounds you.',
     facts: [
       { k: 'Studied', v: 'Computer Science · PNU' },
-      { k: 'Trained', v: 'stc × TCS · Tuwaiq Academy' },
+      { k: 'Trained', v: 'STC × TCS · Tuwaiq Academy' },
       { k: 'Builds', v: 'Apps · XR · Interfaces' },
     ],
     orbitTitle: 'Skill orbit',
     orbitHint: 'Pick an orbit',
     all: 'Everything',
     cats: {
-      apps: { name: 'Apps', line: 'Apps you hold. Flutter and Dart, clean architecture, APIs and real-time features.' },
-      xr: { name: 'XR', line: 'Worlds you step into. Unity and C# for Meta Quest 3, natural hand interaction and spatial UI.' },
-      design: { name: 'Design', line: 'Interfaces that feel obvious. Research, prototypes and usability tests in Figma, with Arabic RTL done properly.' },
-      lead: { name: 'People', line: 'The people around the work. GDGoC leader and mentor, Student Advisory Council, Ajyalna Alwaidah.' },
+      apps: { name: 'Apps' },
+      xr: { name: 'XR' },
+      design: { name: 'Design' },
+      lead: { name: 'People' },
     },
     allLine: 'Four orbits, one practice: build it well, make it feel human.',
     chaptersTitle: 'What shaped me',
     chapters: [
       { tag: 'Degree', name: 'Princess Nourah University', note: 'B.Sc. Computer Science', cat: 'violet' },
       { tag: 'Community', name: 'GDGoC', note: 'Leader & mentor, Core Team 2023–2024', cat: 'lead' },
-      { tag: 'Co-op', name: 'stc × TCS', note: 'Enterprise applications sector', cat: 'design' },
+      { tag: 'Co-op', name: 'STC × TCS', note: 'Enterprise applications sector', cat: 'design' },
       { tag: 'Camp', name: 'Tuwaiq Academy', note: 'Emerging Technologies & Virtual Worlds', cat: 'xr' },
     ],
     strengths: ['Communication', 'Leadership', 'Problem-solving', 'Continuous learning', 'Arabic & English', 'User-centred thinking'],
@@ -81,24 +81,24 @@ const text = {
     lede: 'أبني لنوعين من الشاشات: شاشة تحملها في جيبك، وأخرى تحيط بك من كل جانب.',
     facts: [
       { k: 'الدراسة', v: 'علوم الحاسب · جامعة الأميرة نورة' },
-      { k: 'التدريب', v: 'stc × TCS · أكاديمية طويق' },
+      { k: 'التدريب', v: 'STC × TCS · أكاديمية طويق' },
       { k: 'أبني', v: 'تطبيقات · واقع ممتد · واجهات' },
     ],
     orbitTitle: 'مدار المهارات',
     orbitHint: 'اختر مدارًا',
     all: 'الكل',
     cats: {
-      apps: { name: 'التطبيقات', line: 'تطبيقات تحملها بين يديك: Flutter وDart، والبنية النظيفة، وواجهات برمجة التطبيقات، والميزات الفورية.' },
-      xr: { name: 'الواقع الممتد', line: 'عوالم تخطو داخلها: Unity وC# لنظارة Meta Quest 3، مع تفاعل طبيعي باليدين وواجهات مكانية.' },
-      design: { name: 'التصميم', line: 'واجهات تبدو بديهية: أبحاث ونماذج أولية واختبارات استخدام في Figma، مع دعم متقن للعربية.' },
-      lead: { name: 'القيادة', line: 'الناس حول العمل: قائدة ومرشدة في GDGoC، والمجلس الاستشاري الطلابي، ومبادرة «أجيالنا الواعدة».' },
+      apps: { name: 'التطبيقات' },
+      xr: { name: 'الواقع الممتد' },
+      design: { name: 'التصميم' },
+      lead: { name: 'القيادة' },
     },
     allLine: 'أربعة مدارات وممارسة واحدة: أن يُبنى العمل بإتقان، وأن يبقى إنسانيًا.',
     chaptersTitle: 'محطات صنعتني',
     chapters: [
       { tag: 'الدرجة', name: 'جامعة الأميرة نورة', note: 'بكالوريوس علوم الحاسب', cat: 'violet' },
       { tag: 'المجتمع', name: 'GDGoC', note: 'قائدة ومرشدة، الفريق الأساسي 2023–2024', cat: 'lead' },
-      { tag: 'التدريب', name: 'stc × TCS', note: 'قطاع التطبيقات المؤسسية', cat: 'design' },
+      { tag: 'التدريب', name: 'STC × TCS', note: 'قطاع التطبيقات المؤسسية', cat: 'design' },
       { tag: 'المعسكر', name: 'أكاديمية طويق', note: 'التقنيات الناشئة والعوالم الافتراضية', cat: 'xr' },
     ],
     strengths: ['التواصل', 'القيادة', 'حل المشكلات', 'التعلّم المستمر', 'العربية والإنجليزية', 'التفكير المتمحور حول المستخدم'],
@@ -204,7 +204,7 @@ export function AboutOrbit({ lang, heading }: { lang: Language; heading: React.R
                 </button>
               ))}
             </div>
-            <p className="about-orbit__caption" aria-live="polite" key={focus ?? 'all'}>{focus ? t.cats[focus].line : t.allLine}</p>
+            <p className="about-orbit__caption">{t.allLine}</p>
           </div>
         </div>
 

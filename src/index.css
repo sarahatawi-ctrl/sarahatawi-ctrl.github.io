@@ -2216,7 +2216,7 @@ html[dir='rtl'] .xr-hero__feature:hover svg { transform: translate(-2px, -2px); 
 html[dir='rtl'] .xr-hero__pose { text-align: start; }
 
 /* responsive */
-@media (max-width: 1100px) {
+@media (max-width: 767px) {
   .xr-hero__inner { grid-template-columns: 1fr; }
   .xr-hero__viewport { width: 100%; max-width: 620px; justify-self: center; }
   .xr-hero__stage { aspect-ratio: 4 / 3; }
@@ -2521,3 +2521,90 @@ html[dir='rtl'] .about-orbit--ar .about-orbit__ribbon li { font-family: var(--ap
 /* hero tools: one general toolbox with brand icons */
 .xr-hero__stack li { display: inline-flex; align-items: center; gap: 8px; }
 .xr-hero__stack li svg { width: 14px; height: 14px; flex: 0 0 auto; color: hsl(var(--tone)); }
+
+/* ════════════════════════════════════════════════════════════════════════
+   Hero: fit the first screen on laptops, desktops and tablets.
+   Sizes follow the viewport height as well as its width, so the whole
+   first-screen composition fits without scrolling.
+   ════════════════════════════════════════════════════════════════════════ */
+.xr-hero { --nav-h: 81px; min-height: 100svh; padding: calc(var(--nav-h) + clamp(12px, 3.2vh, 40px)) clamp(24px, 4vw, 56px) clamp(52px, 8vh, 88px); }
+.xr-hero__name { margin-top: clamp(10px, 2.4vh, 26px); font-size: clamp(3.4rem, min(9.4vw, 14.5vh), 11rem); }
+.xr-hero--ar .xr-hero__name { font-size: clamp(3rem, min(8vw, 13vh), 9rem); }
+.xr-hero__role { margin-top: clamp(12px, 2.8vh, 30px); }
+.xr-hero__bio { margin-top: clamp(8px, 2vh, 22px); }
+.xr-hero__actions { margin-top: clamp(14px, 3.2vh, 34px); }
+.xr-hero__stack { margin-top: clamp(16px, 3.6vh, 40px); padding-top: clamp(10px, 1.8vh, 18px); }
+.xr-hero__stage { margin: clamp(8px, 1.4vh, 12px) 0; max-height: max(220px, calc(100svh - var(--nav-h) - 300px)); }
+.xr-hero__scroll { bottom: clamp(14px, 2.6vh, 28px); }
+@media (min-width: 1900px) { .xr-hero__inner { max-width: 1600px; } }
+/* tablets (two columns, narrower identity column) */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .xr-hero__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 3.5vw, 48px); }
+  .xr-hero__name { font-size: clamp(3.4rem, min(9vw, 11vh), 6.4rem); }
+  .xr-hero--ar .xr-hero__name { font-size: clamp(3rem, min(7.6vw, 10vh), 5.6rem); }
+  .xr-hero__stage { aspect-ratio: 1 / 1.02; }
+  .xr-hero__pose { display: none; }
+}
+/* phones: identity fills the first screen, the viewport follows below */
+@media (max-width: 767px) {
+  .xr-hero { --nav-h: 68px; min-height: 0; padding: calc(var(--nav-h) + clamp(20px, 4vh, 36px)) 20px 56px; }
+  .xr-hero__name { font-size: clamp(3.4rem, min(17vw, 11vh), 5.4rem); }
+  .xr-hero--ar .xr-hero__name { font-size: clamp(3rem, min(15vw, 9.5vh), 4.8rem); }
+  .xr-hero__stage { max-height: none; }
+  .xr-hero__viewport { margin-top: 8px; }
+}
+/* Arabic hero name: tighter leading so the two-word name fits short laptop screens */
+.xr-hero--ar .xr-hero__name { line-height: 1.12 !important; font-size: clamp(3rem, min(8vw, 12vh), 9rem); }
+.xr-hero--ar .xr-hero__word { padding-bottom: .16em; margin-bottom: -.08em; }
+@media (min-width: 768px) and (max-width: 1100px) { .xr-hero--ar .xr-hero__name { font-size: clamp(3rem, min(7.6vw, 9.5vh), 5.6rem); } }
+@media (max-width: 767px) { .xr-hero--ar .xr-hero__name { font-size: clamp(3rem, min(15vw, 9vh), 4.8rem); } }
+/* tools label sits beside the chips instead of on its own row */
+.xr-hero__stack { flex-wrap: nowrap; align-items: flex-start; }
+.xr-hero__stack-label { flex: 0 0 auto; padding-top: 7px; }
+.xr-hero__stack ul { flex: 1 1 auto; min-width: 0; }
+.xr-hero { padding-bottom: clamp(46px, 6.6vh, 80px); }
+@media (max-width: 767px) { .xr-hero { padding-bottom: 56px; } }
+/* short laptop screens (≈720–780px tall): a slightly more compact hero */
+@media (min-width: 768px) and (max-height: 800px) {
+  .xr-hero__name { font-size: clamp(3rem, min(9.4vw, 13.6vh), 9rem); }
+  .xr-hero--ar .xr-hero__name { font-size: clamp(2.8rem, min(8vw, 10.8vh), 8rem); }
+  .xr-hero__bio { line-height: 1.7; }
+  html[dir='rtl'] .xr-hero__bio { line-height: 1.8; }
+  .xr-hero__stack li { padding: 5px 10px; }
+  .xr-hero__stack ul { gap: 6px; }
+  .xr-btn { padding-block: 12px; }
+  .xr-hero__socials a { width: 42px; height: 42px; }
+  .xr-hero__feature { margin-top: 8px; padding-top: 8px; }
+  .xr-hero__feature-name { font-size: 1.3rem; }
+}
+@media (min-width: 768px) and (max-width: 1100px) and (max-height: 800px) {
+  .xr-hero__name { font-size: clamp(2.8rem, min(7.6vw, 10.4vh), 6rem); }
+  .xr-hero--ar .xr-hero__name { font-size: clamp(2.6rem, min(6.6vw, 9vh), 5rem); }
+  .xr-hero__bio { font-size: .95rem; }
+}
+
+/* ── About: balance the orbit illustration and the text ───────────── */
+.about-orbit__top { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: clamp(36px, 5vw, 80px); }
+.about-orbit__system { --size: min(100%, 440px); }
+.about-orbit__card { padding: 16px 16px 18px; }
+.about-orbit__eyebrow { font-size: 12px; }
+.about-orbit__lede { max-width: 36rem; margin-top: 18px; font-size: clamp(1.4rem, 2.15vw, 2rem); line-height: 1.5; letter-spacing: -.01em; color: hsl(var(--foreground) / .92); text-wrap: pretty; }
+.about-orbit--ar .about-orbit__lede { font-size: clamp(1.45rem, 2.2vw, 2.05rem); line-height: 1.75; letter-spacing: 0; }
+.about-orbit__facts { margin-top: clamp(26px, 3.5vw, 40px); }
+.about-orbit__fact { padding: 16px 0; grid-template-columns: 8rem 1fr; }
+.about-orbit__fact dt { font-size: 11px; }
+.about-orbit--ar .about-orbit__fact dt { font-size: 14px !important; }
+.about-orbit__fact dd { font-size: clamp(1rem, 1.25vw, 1.15rem); }
+.about-orbit__caption { font-size: 15px; color: hsl(var(--foreground) / .72); }
+.about-orbit--ar .about-orbit__caption { font-size: 16px; }
+@media (max-width: 1100px) {
+  .about-orbit__top { grid-template-columns: 1fr; }
+  .about-orbit__card { max-width: 520px; }
+}
+@media (max-width: 760px) {
+  .about-orbit__lede { font-size: clamp(1.25rem, 5.4vw, 1.5rem); }
+  .about-orbit--ar .about-orbit__lede { font-size: clamp(1.3rem, 5.6vw, 1.55rem); }
+  .about-orbit__fact { grid-template-columns: 6.2rem 1fr; }
+  .about-orbit__fact dd { font-size: 1rem; }
+}
+.about-orbit--ar .about-orbit__eyebrow { font-size: 14px !important; }
