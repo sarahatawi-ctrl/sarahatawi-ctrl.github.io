@@ -4,6 +4,18 @@
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:is(.dark *));
 
+/* Arabic display: Markazi Text (Arabic glyphs only), scaled up because its Arabic
+   runs small next to Fraunces. Latin inside Arabic headings falls back to Fraunces. */
+@font-face {
+  font-family: 'Markazi Text AR';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  size-adjust: 118%;
+  src: url(https://fonts.gstatic.com/s/markazitext/v28/syk0-ydym6AtQaiEtX7yhqbVpHWVBVLqUqsY.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;
+}
+
 @theme inline {
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -66,10 +78,10 @@
   --fresh-lime: 79 66% 67%;
   --soft-pink: 321 65% 74%;
   --paper: 42 29% 92%;
-  --app-font-arabic-display: 'El Messiri', 'IBM Plex Sans Arabic', 'Geeza Pro', 'Times New Roman', serif;
-  --app-font-arabic-body: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', 'Geeza Pro', 'Segoe UI', Tahoma, sans-serif;
+  --app-font-arabic-display: 'Markazi Text AR', 'Fraunces', 'Vazirmatn', 'Geeza Pro', serif;
+  --app-font-arabic-body: 'Vazirmatn', 'Noto Sans Arabic', 'Geeza Pro', 'Segoe UI', Tahoma, sans-serif;
   --app-font-sans: 'Manrope', var(--app-font-arabic-body), system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --app-font-serif: 'Fraunces', 'El Messiri', Georgia, 'Times New Roman', serif;
+  --app-font-serif: 'Fraunces', 'Markazi Text AR', Georgia, 'Times New Roman', serif;
   --app-font-mono: 'DM Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   --radius: 0.25rem;
   --shadow-2xs: 0 2px 0 hsl(240 13% 3% / .2);
@@ -2018,7 +2030,7 @@ html[dir="rtl"] #work h2.global-section-heading {
 /* ═══════════════════════════════════════════════════════════════════
    Type system — final and authoritative (keep at the end of the file)
    EN: Fraunces (display) + Manrope (text) + DM Mono (labels)
-   AR: El Messiri (display) + IBM Plex Sans Arabic (text & UI)
+   AR: Markazi Text (display, size-adjusted) + Vazirmatn (text & UI)
    ═══════════════════════════════════════════════════════════════════ */
 html { font-kerning: normal; text-rendering: optimizeLegibility; }
 body { font-feature-settings: "kern" 1; }
@@ -2502,3 +2514,6 @@ html[dir='rtl'] .about-orbit__ribbon-track { animation-name: ribbon-rtl; }
   .about-orbit__ring--2 { width: 96cqi; height: 96cqi; }
   .about-orbit__core { width: 24cqi; }
 }
+/* Arabic display font must reach the inner spans of About headings (the global RTL span rule would otherwise reset them to the body face). */
+html[dir='rtl'] .about-orbit--ar :is(.about-orbit__title, .about-orbit__title *, .about-orbit__chapter-name) { font-family: var(--app-font-arabic-display); font-weight: 700; font-style: normal; letter-spacing: 0; }
+html[dir='rtl'] .about-orbit--ar .about-orbit__ribbon li { font-family: var(--app-font-arabic-display); font-weight: 600; }

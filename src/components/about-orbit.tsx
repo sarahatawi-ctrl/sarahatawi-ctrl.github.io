@@ -165,7 +165,7 @@ export function AboutOrbit({ lang, heading }: { lang: Language; heading: React.R
             <dl className="about-orbit__facts">
               {t.facts.map((f, i) => (
                 <div key={f.k} className="about-orbit__fact" style={{ ['--i' as string]: i } as CSSProperties}>
-                  <dt>{f.k}</dt><dd dir="auto">{f.v}</dd>
+                  <dt>{f.k}</dt><dd>{f.v}</dd>
                 </div>
               ))}
             </dl>
@@ -227,8 +227,8 @@ export function AboutOrbit({ lang, heading }: { lang: Language; heading: React.R
               <li key={ch.name} className={`about-orbit__chapter about-orbit__chapter--${ch.cat}`} style={{ ['--i' as string]: i } as CSSProperties}>
                 <span className="about-orbit__chapter-dot" aria-hidden="true" />
                 <span className="about-orbit__chapter-tag">{String(i + 1).padStart(2, '0')} · {ch.tag}</span>
-                <span className="about-orbit__chapter-name" dir="auto">{ch.name}</span>
-                <span className="about-orbit__chapter-note" dir="auto">{ch.note}</span>
+                <span className="about-orbit__chapter-name">{ch.name}</span>
+                <span className="about-orbit__chapter-note">{ch.note}</span>
               </li>
             ))}
           </ol>
