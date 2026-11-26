@@ -4,6 +4,7 @@ import { SiAndroidstudio, SiDart, SiFirebase, SiFigma, SiFlutter, SiGithub, SiGo
 import { VscCode } from 'react-icons/vsc';
 import { Link, Route, Switch, useLocation, useParams } from 'wouter';
 import { ErrorBoundary } from '@/components/error-boundary';
+import { AboutOrbit } from '@/components/about-orbit';
 import { XRHero } from '@/components/xr-hero';
 import { copy, education, experience, interests, projects, leadershipCards, type LeadershipCard, type Language, type Project, type ProjectMedia, workshops } from '@/lib/content';
 
@@ -525,19 +526,7 @@ function HomePage({ lang, onChange }: { lang: Language; onChange: (language: Lan
       <main>
         <XRHero lang={lang} viewWork={c.viewWork} contactMe={c.contactMe} scroll={c.scroll} />
 
-         <section id="about" className="about-section mx-auto max-w-[1440px] scroll-mt-20 px-6 py-28 sm:px-10 sm:py-40 lg:px-14" aria-labelledby="about-heading">
-           <SectionHeading number="01" id="about-heading">{c.aboutLabel}</SectionHeading>
-           <div className="max-w-3xl">
-             <div className="max-w-xl">
-              <p className="text-base leading-8 text-foreground/85">{c.aboutBody}</p>
-              <p className="mt-6 text-sm leading-7 text-muted-foreground">{c.aboutBody2}</p>
-              <div className="mt-12 border-l border-primary/60 pl-5">
-                <p className="font-mono-custom text-[10px] uppercase tracking-[0.18em] text-primary">{c.currently}</p>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">{c.focus}</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <AboutOrbit lang={lang} heading={<SectionHeading number="01" id="about-heading">{c.aboutLabel}</SectionHeading>} />
 
         <section id="interests" className="interests-section scroll-mt-20 border-t border-border/70" aria-labelledby="interests-heading">
           <div className="mx-auto max-w-[1440px] px-6 py-28 sm:px-10 sm:py-36 lg:px-14">
