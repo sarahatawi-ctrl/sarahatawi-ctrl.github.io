@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowDown, ArrowUpRight, Github, Linkedin } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Code2, Github, Linkedin } from 'lucide-react';
+import { SiAndroidstudio, SiDart, SiFigma, SiFirebase, SiFlutter, SiGithub, SiMeta, SiUnity } from 'react-icons/si';
+import { VscCode } from 'react-icons/vsc';
 import { Link } from 'wouter';
 import { copy, type Language } from '@/lib/content';
 
@@ -27,8 +29,7 @@ const text = {
     mesh: { app: 'phone.mesh', xr: 'headset.mesh' },
     featured: 'Featured',
     feature: { app: { slug: 'talaqi', name: 'Talaqi', note: 'Flutter app' }, xr: { slug: 'captain-crew', name: 'Captain Crew', note: 'VR on Meta Quest 3' } },
-    stack: 'Stack',
-    stacks: { app: ['Flutter', 'Dart', 'Firebase', 'Clean Architecture', 'APIs'], xr: ['Unity', 'C#', 'Meta Quest 3', 'XR Interaction Toolkit', 'VR / AR'] },
+    stack: 'Tools',
     viewportA11y: 'Interactive 3D viewport. A wireframe phone represents application development and a wireframe headset represents XR development.',
   },
   ar: {
@@ -44,10 +45,23 @@ const text = {
     featured: 'مشروع مختار',
     feature: { app: { slug: 'talaqi', name: 'تلاقي', note: 'تطبيق Flutter' }, xr: { slug: 'captain-crew', name: 'كابتن كرو', note: 'واقع افتراضي على Meta Quest 3' } },
     stack: 'الأدوات',
-    stacks: { app: ['Flutter', 'Dart', 'Firebase', 'البنية النظيفة', 'واجهات برمجة التطبيقات'], xr: ['Unity', 'C#', 'Meta Quest 3', 'XR Interaction Toolkit', 'الواقع الافتراضي والمعزّز'] },
     viewportA11y: 'نافذة ثلاثية الأبعاد تفاعلية: هاتف بخطوط هيكلية يمثّل تطوير التطبيقات، ونظارة واقع افتراضي تمثّل تطوير الواقع الممتد.',
   },
 } as const;
+
+// One general toolbox, not split by discipline.
+const tools = [
+  { name: 'Flutter', Icon: SiFlutter },
+  { name: 'Dart', Icon: SiDart },
+  { name: 'Firebase', Icon: SiFirebase },
+  { name: 'Unity', Icon: SiUnity },
+  { name: 'C#', Icon: Code2 },
+  { name: 'Meta Quest 3', Icon: SiMeta },
+  { name: 'Figma', Icon: SiFigma },
+  { name: 'GitHub', Icon: SiGithub },
+  { name: 'VS Code', Icon: VscCode },
+  { name: 'Android Studio', Icon: SiAndroidstudio },
+];
 
 /* ───────── geometry helpers ───────── */
 function roundRect(w: number, h: number, r: number, z: number, cx = 0, cy = 0, seg = 5): V3[] {
@@ -334,7 +348,7 @@ export function XRHero({ lang, viewWork, contactMe, scroll }: { lang: Language; 
           </div>
           <div className="xr-hero__stack" aria-label={tx.stack}>
             <span className="xr-hero__stack-label">{tx.stack}</span>
-            <ul key={mode}>{tx.stacks[mode].map((s, i) => <li key={s} style={{ ['--i' as string]: i }} dir="auto">{s}</li>)}</ul>
+            <ul>{tools.map(({ name, Icon }, i) => <li key={name} style={{ ['--i' as string]: i }} dir="ltr"><Icon aria-hidden="true" />{name}</li>)}</ul>
           </div>
         </div>
 

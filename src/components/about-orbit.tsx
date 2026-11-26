@@ -49,9 +49,6 @@ const nodeAr: Record<string, string> = {
 const text = {
   en: {
     eyebrow: 'Who’s behind the work',
-    titleA: 'Technical by nature.',
-    titleB: 'Human',
-    titleC: 'in practice.',
     lede: 'I build for two kinds of screens: the one in your pocket, and the one that surrounds you.',
     facts: [
       { k: 'Studied', v: 'Computer Science · PNU' },
@@ -73,8 +70,7 @@ const text = {
       { tag: 'Degree', name: 'Princess Nourah University', note: 'B.Sc. Computer Science', cat: 'violet' },
       { tag: 'Community', name: 'GDGoC', note: 'Leader & mentor, Core Team 2023–2024', cat: 'lead' },
       { tag: 'Co-op', name: 'stc × TCS', note: 'Enterprise applications sector', cat: 'design' },
-      { tag: 'Camp', name: 'Tuwaiq Academy', note: 'Emerging Technologies & Virtual Worlds', cat: 'apps' },
-      { tag: 'Now', name: 'Apps + XR', note: 'Open to meaningful work', cat: 'xr' },
+      { tag: 'Camp', name: 'Tuwaiq Academy', note: 'Emerging Technologies & Virtual Worlds', cat: 'xr' },
     ],
     strengths: ['Communication', 'Leadership', 'Problem-solving', 'Continuous learning', 'Arabic & English', 'User-centred thinking'],
     exploring: 'Currently exploring',
@@ -82,9 +78,6 @@ const text = {
   },
   ar: {
     eyebrow: 'مَن وراء هذه الأعمال',
-    titleA: 'تقنية بطبيعتها،',
-    titleB: 'إنسانية',
-    titleC: 'في ممارستها.',
     lede: 'أبني لنوعين من الشاشات: شاشة تحملها في جيبك، وأخرى تحيط بك من كل جانب.',
     facts: [
       { k: 'الدراسة', v: 'علوم الحاسب · جامعة الأميرة نورة' },
@@ -106,8 +99,7 @@ const text = {
       { tag: 'الدرجة', name: 'جامعة الأميرة نورة', note: 'بكالوريوس علوم الحاسب', cat: 'violet' },
       { tag: 'المجتمع', name: 'GDGoC', note: 'قائدة ومرشدة، الفريق الأساسي 2023–2024', cat: 'lead' },
       { tag: 'التدريب', name: 'stc × TCS', note: 'قطاع التطبيقات المؤسسية', cat: 'design' },
-      { tag: 'المعسكر', name: 'أكاديمية طويق', note: 'التقنيات الناشئة والعوالم الافتراضية', cat: 'apps' },
-      { tag: 'الآن', name: 'تطبيقات + XR', note: 'متاحة لفرص عمل هادفة', cat: 'xr' },
+      { tag: 'المعسكر', name: 'أكاديمية طويق', note: 'التقنيات الناشئة والعوالم الافتراضية', cat: 'xr' },
     ],
     strengths: ['التواصل', 'القيادة', 'حل المشكلات', 'التعلّم المستمر', 'العربية والإنجليزية', 'التفكير المتمحور حول المستخدم'],
     exploring: 'أستكشف حاليًا',
@@ -157,10 +149,6 @@ export function AboutOrbit({ lang, heading }: { lang: Language; heading: React.R
         <div className="about-orbit__top">
           <div className="about-orbit__intro">
             <p className="about-orbit__eyebrow"><span className="about-orbit__spark" aria-hidden="true" />{t.eyebrow}</p>
-            <h3 className="about-orbit__title">
-              <span className="about-orbit__line" style={{ ['--d' as string]: '0s' }}>{t.titleA}</span>
-              <span className="about-orbit__line" style={{ ['--d' as string]: '.12s' }}><em>{t.titleB}</em> {t.titleC}</span>
-            </h3>
             <p className="about-orbit__lede">{t.lede}</p>
             <dl className="about-orbit__facts">
               {t.facts.map((f, i) => (

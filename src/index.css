@@ -2417,7 +2417,7 @@ body footer::before { content: ''; position: absolute; inset: -1px 0 auto; heigh
 /* chapters */
 .about-orbit__chapters-wrap { margin-top: clamp(72px, 9vw, 120px); }
 .about-orbit__kicker { font-family: var(--app-font-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: hsl(var(--muted-foreground)); }
-.about-orbit__chapters { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 26px 0 0; padding: 30px 0 0; list-style: none; }
+.about-orbit__chapters { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 26px 0 0; padding: 30px 0 0; list-style: none; }
 .about-orbit__chapters::before { content: ''; position: absolute; top: 5px; inset-inline: 0; height: 1px; background: var(--spectrum); opacity: .55; transform: scaleX(0); transform-origin: left; transition: transform 1.6s cubic-bezier(.2,.8,.2,1) .2s; }
 html[dir='rtl'] .about-orbit__chapters::before { transform-origin: right; background: linear-gradient(270deg, hsl(var(--primary)), hsl(var(--c-pink)), hsl(var(--c-orange)), hsl(var(--c-yellow)), hsl(var(--c-green))); }
 .about-orbit.is-in .about-orbit__chapters::before { transform: scaleX(1); }
@@ -2477,7 +2477,7 @@ html[dir='rtl'] .about-orbit__ribbon-track { animation-name: ribbon-rtl; }
 @media (max-width: 1100px) {
   .about-orbit__top { grid-template-columns: 1fr; }
   .about-orbit__card { max-width: 640px; width: 100%; justify-self: center; }
-  .about-orbit__chapters { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 44px; }
+  .about-orbit__chapters { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 44px; }
   .about-orbit__chapters::before { display: none; }
   .about-orbit__chapter-dot { top: -6px; }
 }
@@ -2517,3 +2517,7 @@ html[dir='rtl'] .about-orbit__ribbon-track { animation-name: ribbon-rtl; }
 /* Arabic display font must reach the inner spans of About headings (the global RTL span rule would otherwise reset them to the body face). */
 html[dir='rtl'] .about-orbit--ar :is(.about-orbit__title, .about-orbit__title *, .about-orbit__chapter-name) { font-family: var(--app-font-arabic-display); font-weight: 700; font-style: normal; letter-spacing: 0; }
 html[dir='rtl'] .about-orbit--ar .about-orbit__ribbon li { font-family: var(--app-font-arabic-display); font-weight: 600; }
+
+/* hero tools: one general toolbox with brand icons */
+.xr-hero__stack li { display: inline-flex; align-items: center; gap: 8px; }
+.xr-hero__stack li svg { width: 14px; height: 14px; flex: 0 0 auto; color: hsl(var(--tone)); }
